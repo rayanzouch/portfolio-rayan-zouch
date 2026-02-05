@@ -54,6 +54,19 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
 
   const activeProject = projects.find(p => p.id === selectedProject)
+  const getAccentClasses = (color: string) => {
+    if (color === 'accent-orange') {
+      return { bg: 'bg-accent-orange/10', text: 'text-accent-orange' }
+    }
+    if (color === 'accent-purple') {
+      return { bg: 'bg-accent-purple/10', text: 'text-accent-purple' }
+    }
+    if (color === 'accent-green') {
+      return { bg: 'bg-accent-green/10', text: 'text-accent-green' }
+    }
+    return { bg: 'bg-accent-cyan/10', text: 'text-accent-cyan' }
+  }
+  const activeAccent = activeProject ? getAccentClasses(activeProject.color) : null
 
   return (
     <section id="projects" className="relative py-32 overflow-hidden">
@@ -116,7 +129,7 @@ export default function Projects() {
 
                 {/* Impact badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-aws-dark/80 border border-aws-border rounded-full mb-6">
-                  <Zap className="w-4 h-4 text-gray-400" />
+                  <Zap className="w-4 h-4 text-yellow-500" />
                   <span className="text-sm font-mono text-white">{project.impact}</span>
                 </div>
 
@@ -173,8 +186,8 @@ export default function Projects() {
 
               {/* Header */}
               <div className="flex items-start gap-6 mb-8">
-                <div className="p-4 bg-accent-cyan/10 rounded-2xl">
-                  <activeProject.icon className="w-10 h-10 text-accent-cyan" />
+                <div className={`p-4 ${activeAccent?.bg ?? 'bg-accent-cyan/10'} rounded-2xl`}>
+                  <activeProject.icon className={`w-10 h-10 ${activeAccent?.text ?? 'text-accent-cyan'}`} />
                 </div>
                 <div>
                   <h3 className="font-display text-2xl font-bold text-white">{activeProject.title}</h3>
@@ -188,18 +201,18 @@ export default function Projects() {
               {/* Architecture diagram */}
               <div className="mb-8">
                 <h4 className="font-mono text-sm text-terminal-green mb-4">// architecture</h4>
-                <div className="flex items-center justify-between p-6 bg-aws-dark/50 rounded-xl border border-aws-border">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between p-6 bg-aws-dark/50 rounded-xl border border-aws-border">
                   {activeProject.architecture.map((item, index) => (
-                    <div key={item.name} className="flex items-center">
+                    <div key={item.name} className="flex items-center justify-center sm:justify-start">
                       <div className="text-center">
                         <div className="p-3 bg-aws-gray rounded-xl mb-2 mx-auto w-fit">
-                          <item.icon className="w-6 h-6 text-accent-cyan" />
+                          <item.icon className={`w-6 h-6 ${activeAccent?.text ?? 'text-accent-cyan'}`} />
                         </div>
                         <p className="text-sm font-medium text-white">{item.name}</p>
                         <p className="text-xs text-gray-500">{item.description}</p>
                       </div>
                       {index < activeProject.architecture.length - 1 && (
-                        <ArrowRight className="w-6 h-6 text-accent-cyan mx-4" />
+                        <ArrowRight className={`hidden sm:block w-6 h-6 ${activeAccent?.text ?? 'text-accent-cyan'} mx-4`} />
                       )}
                     </div>
                   ))}
