@@ -18,6 +18,7 @@ const COMMANDS: Record<string, string | string[]> = {
     '  skills       Technical skills',
     '  projects     Selected projects',
     '  contact      Get in touch',
+    '  resume       Download resume',
     '  clear        Clear terminal',
   ],
 
@@ -94,6 +95,12 @@ const COMMANDS: Record<string, string | string[]> = {
     '  GitHub     github.com/rayanzouch',
     '',
     '  Feel free to reach out 🚀',
+    '',
+  ],
+
+  resume: [
+    '',
+    '  Downloading resume...',
     '',
   ],
 }
@@ -225,6 +232,15 @@ export default function Terminal() {
     if (trimmedCmd === 'clear') {
       setHistory([])
       return
+    }
+
+    if (trimmedCmd === 'resume' || trimmedCmd === 'download resume' || trimmedCmd === 'download') {
+      const link = document.createElement('a')
+      link.href = '/Resume_Rayan_ZOUCH.pdf'
+      link.download = 'Resume_Rayan_ZOUCH.pdf'
+      document.body.appendChild(link)
+      link.click()
+      link.remove()
     }
 
     const response = COMMANDS[trimmedCmd]

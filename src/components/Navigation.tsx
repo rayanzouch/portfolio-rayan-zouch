@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Terminal } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -64,21 +64,12 @@ export default function Navigation() {
             {/* Logo */}
             <motion.a
               href="#home"
-              className="flex items-center gap-2 group"
+              className="flex items-center group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative">
-                <Terminal className="w-8 h-8 text-terminal-green" />
-                <motion.div
-                  className="absolute inset-0 bg-terminal-green/20 rounded-full blur-xl"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-              </div>
-              <span className="font-display font-bold text-xl">
-                <span className="text-white">rayanzouch</span>
-                <span className="text-terminal-green">.com</span>
+              <span className="font-display font-bold text-xl tracking-wide text-white">
+                Rayan Zouch
               </span>
             </motion.a>
 
@@ -112,12 +103,13 @@ export default function Navigation() {
 
             {/* CTA Button */}
             <motion.a
-              href="#contact"
+              href="/Resume_Rayan_ZOUCH.pdf"
+              download
               className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-terminal-green/20 border border-terminal-green/50 rounded-lg font-medium text-sm text-terminal-green hover:bg-terminal-green/30 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Contact me
+              Download Resume
             </motion.a>
 
             {/* Mobile Menu Button */}
