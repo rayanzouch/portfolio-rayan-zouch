@@ -2,20 +2,20 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Rayan Zouch | Cloud & Production Engineer',
-  description: 'Portfolio of Rayan Zouch - Cloud & Production Engineer specialized in AWS, IT Infrastructure and DevOps. Amazon and PwC experience.',
-  keywords: ['Cloud Engineer', 'AWS', 'DevOps', 'Infrastructure', 'Production Engineer', 'Rayan Zouch'],
+  title: 'Rayan Zouch — Portfolio',
+  description: 'Personal portfolio of Rayan Zouch, showcasing projects and experience in cloud and infrastructure.',
+  keywords: ['Cloud Engineer', 'AWS', 'DevOps', 'Infrastructure', 'Rayan Zouch', 'Portfolio'],
   authors: [{ name: 'Rayan Zouch' }],
   openGraph: {
-    title: 'Rayan Zouch | Cloud & Production Engineer',
-    description: 'Cloud & Production Engineer specialized in AWS, IT Infrastructure and DevOps',
+    title: 'Rayan Zouch — Portfolio',
+    description: 'Personal portfolio of Rayan Zouch.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rayan Zouch | Cloud & Production Engineer',
-    description: 'Cloud & Production Engineer specialized in AWS, IT Infrastructure and DevOps',
+    title: 'Rayan Zouch — Portfolio',
+    description: 'Personal portfolio of Rayan Zouch.',
   },
   robots: {
     index: true,
