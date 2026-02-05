@@ -360,6 +360,17 @@ export default function Terminal() {
         </div>
       </div>
 
+      {sequenceComplete && (
+        <motion.div
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="mt-3 text-center text-white/80 italic text-sm"
+        >
+          type help to start exploring
+        </motion.div>
+      )}
+
     </motion.div>
   )
 }

@@ -65,7 +65,7 @@ const experiences = [
       {
         title: 'Presentations',
         description: 'Threat report presentations to PwC security team and CIX-A members',
-        impact: 'Team visibility',
+        impact: 'Presentation and communication',
       },
     ],
   },
@@ -193,15 +193,17 @@ export default function Experience() {
                       transition={{ delay: index * 0.1 }}
                       className="group p-5 bg-aws-dark/50 rounded-xl border border-aws-border hover:border-white/30 transition-all"
                     >
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                         <div className="flex-1">
                           <h5 className="font-semibold text-white group-hover:text-white transition-colors">
                             {achievement.title}
                           </h5>
                           <p className="text-sm text-gray-500 mt-1">{achievement.description}</p>
                         </div>
-                        <div className="shrink-0 px-3 py-1 bg-aws-dark/80 border border-aws-border rounded-full">
-                          <span className="text-xs font-mono text-white">{achievement.impact}</span>
+                        <div className="shrink-0 max-w-full px-3 py-1 bg-aws-dark/80 border border-aws-border rounded-full">
+                          <span className="text-xs font-mono text-white text-center sm:text-left whitespace-normal break-words leading-snug">
+                            {achievement.impact}
+                          </span>
                         </div>
                       </div>
                     </motion.div>
