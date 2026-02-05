@@ -43,7 +43,7 @@ const experiences = [
     role: 'Cyber Threat Analyst Intern',
     period: 'Apr 2024 - Sep 2024',
     location: 'Neuilly-sur-Seine, France',
-    logo: '/PwC_Logo.jpg',
+    logo: '/PwC_logo.jpg',
     color: 'accent-cyan',
     description: 'Cyber threat analysis and security watch for enterprise clients',
     achievements: [
