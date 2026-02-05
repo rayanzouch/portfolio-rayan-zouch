@@ -35,7 +35,7 @@ const projects = [
     The pipeline includes: intelligent webcam detection using YOLO v8 (multi-frame voting), automatic video composition (35% webcam + 65% gameplay), Twitch branding overlay, and Hormozi-style animated subtitles (word-by-word highlighting).
 
     Key features: automatic fallbacks (AssemblyAI → Whisper, YOLO → visual analysis), adaptive compression targeting 100MB, GPU-accelerated encoding with NVENC (5-10x faster), and Streamable upload for large files.`,
-    impact: 'Full automation pipeline',
+    impact: 'From Twitch clip to TikTok-ready video',
     tags: ['Python', 'YOLO v8', 'MoviePy', 'AssemblyAI', 'Whisper', 'NVENC'],
     color: 'accent-purple',
     icon: Video,
