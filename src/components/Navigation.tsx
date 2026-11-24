@@ -148,6 +148,14 @@ export default function Navigation() {
                   {item.name}
                 </motion.a>
               ))}
+              <a
+                href="/Resume_Rayan_ZOUCH.pdf"
+                download
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="rounded-lg border border-terminal-green/50 px-5 py-2.5 font-medium text-terminal-green"
+              >
+                Download Resume
+              </a>
             </nav>
           </motion.div>
         )}
